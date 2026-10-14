@@ -1,0 +1,99 @@
+TABLAS:
+   Trabajadores
+         id
+         dni
+         passwordHash
+         nombres
+         cargo
+         area
+         sede
+         correo
+         supervisor
+         rol
+         estado
+         fechaIngresoEmpresa
+         fechaRegistro
+         horaIngreso
+         horaSalida
+         horaSalidaSabado
+         toleranciaMin
+         refrigerio
+         turno
+         regimen
+
+   Asistencias
+         trabajadorId
+         fecha
+         id
+         trabajadorNombre
+         area
+         sede
+         horaIngreso
+         horaSalida
+         horarioIngreso
+         horarioSalida
+         estado
+         minutosTardanza
+         minutosTrabajados
+         registradoEn
+
+   Permisos
+         id
+         codigo
+         trabajadorId
+         trabajadorNombre
+         area
+         tipo
+         fechaInicio
+         fechaFin
+         motivo
+         estado
+         observacion
+         revisadoPor
+         fechaSolicitud
+         fechaRevision
+
+   TiposPermiso
+         id
+         nombre
+
+
+
+
+API TRABAJADORES
+
+GET
+https://3zel8b8aak.execute-api.us-east-1.amazonaws.com/trabajadores/{id}
+
+POST
+https://3zel8b8aak.execute-api.us-east-1.amazonaws.com/login
+
+
+
+API ASISTENCIAS
+
+GET
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/asistencias
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/asistencias/trabajador/{trabajadorId}
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/asistencias/hoy/{trabajadorId}
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/ausencias/{trabajadorId}
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/reportes/{desde}/{hasta}
+
+POST
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/asistencias/ingreso
+https://7eah03ia4j.execute-api.us-east-1.amazonaws.com/asistencias/salida
+
+
+
+API PERMISOS
+
+GET
+https://g5w81kw0p2.execute-api.us-east-1.amazonaws.com/tipos-permiso
+https://g5w81kw0p2.execute-api.us-east-1.amazonaws.com/permisos
+https://g5w81kw0p2.execute-api.us-east-1.amazonaws.com/permisos/trabajador/{trabajadorId}
+
+POST
+https://g5w81kw0p2.execute-api.us-east-1.amazonaws.com/permisos
+
+PUT
+https://g5w81kw0p2.execute-api.us-east-1.amazonaws.com/permisos/{id}
